@@ -1,0 +1,12 @@
+D:\Raven\Practice Exercise\C#\Assignment20\bin\Debug\Assignment20.exe.config
+D:\Raven\Practice Exercise\C#\Assignment20\bin\Debug\Assignment20.exe
+D:\Raven\Practice Exercise\C#\Assignment20\bin\Debug\Assignment20.pdb
+D:\Raven\Practice Exercise\C#\Assignment20\obj\Debug\Assignment20.csproj.AssemblyReference.cache
+D:\Raven\Practice Exercise\C#\Assignment20\obj\Debug\Assignment20.csproj.SuggestedBindingRedirects.cache
+D:\Raven\Practice Exercise\C#\Assignment20\obj\Debug\Assignment20.csproj.CoreCompileInputs.cache
+D:\Raven\Practice Exercise\C#\Assignment20\obj\Debug\Assignment20.exe
+D:\Raven\Practice Exercise\C#\Assignment20\obj\Debug\Assignment20.pdb
+D:\Raven\Practice Exercise\C#\Assignment20\bin\Debug\BookLib.exe
+D:\Raven\Practice Exercise\C#\Assignment20\bin\Debug\BookLib.pdb
+D:\Raven\Practice Exercise\C#\Assignment20\bin\Debug\BookLib.exe.config
+D:\Raven\Practice Exercise\C#\Assignment20\obj\Debug\Assignment20.csproj.CopyComplete
