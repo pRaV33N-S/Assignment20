@@ -1,73 +1,81 @@
-﻿
-using BookLib;
+﻿using BookLib;
 using System;
-
-internal class Program
+using System.Collections.Generic;
+namespace Assignment20
 {
-    static void Main(string[] args)
+
+    class Program
     {
-        try
+        static void Main(string[] args)
         {
-            Library lib = new Library();
-            Console.WriteLine("Welcome to the Library");
-            Console.WriteLine("The Options\n1. Add a Book\n2. View All the Books\n3. Search Book By Id\n4. Search Book By Title");
-            Console.WriteLine("Choose an Option");
-
-        repeat:
-            switch (int.Parse(Console.ReadLine()))
+            Library library = new Library();
+            char opt;
+            do
             {
-                case 1:
-                    {
-                        Console.Write("Enter Book ID: ");
-                        int bookId = int.Parse(Console.ReadLine());
+                Console.WriteLine("Library Management System");
+                Console.WriteLine("1. Add a Book");
+                Console.WriteLine("2. View All Books");
+                Console.WriteLine("3. Search by Book ID");
+                Console.WriteLine("4. Search by Title");
+                Console.WriteLine("5. Exit");
+                Console.Write("Enter your choice: ");
+                int choice = int.Parse(Console.ReadLine());
 
-                        Console.Write("Enter Book Title: ");
-                        string title = Console.ReadLine();
+                switch (choice)
+                {
+                    case 1:
+                        {
+                            Console.Write("Enter Book ID: ");
+                            int bookId = int.Parse(Console.ReadLine());
+                            Console.Write("Enter Title: ");
+                            string title = Console.ReadLine();
+                            Console.Write("Enter Author: ");
+                            string author = Console.ReadLine();
+                            Console.Write("Enter Genre: ");
+                            string genre = Console.ReadLine();
 
-                        Console.Write("Enter Book Author: ");
-                        string author = Console.ReadLine();
+                            Book book = new Book(bookId, title, author, genre);
+                            library.AddBook(book);
+                            Console.WriteLine("Book added successfully.");
+                            break;
+                        }
+                    case 2:
+                        {
+                            library.ViewAllBooks();
+                            break;
+                        }
+                    case 3:
+                        {
+                            Console.Write("Enter Book ID to search: ");
+                            int searchId = int.Parse(Console.ReadLine());
+                            library.SearchBookById(searchId);
+                            break;
+                        }
+                    case 4:
+                        {
+                            Console.Write("Enter Title to search: ");
+                            string searchTitle = Console.ReadLine();
+                            library.SearchBookByTitle(searchTitle);
+                            break;
+                        }
+                    case 5:
+                        {
+                            Console.WriteLine("Exiting the program. Goodbye!");
+                            break;
+                        }
 
-                        Console.Write("Enter Book Genre: ");
-                        string genre = Console.ReadLine();
+                    default:
+                        {
+                            Console.WriteLine("Invalid choice. Please try again.");
+                            break;
+                        }
+                }
 
-                        Book newBook = new Book(bookId, title, author, genre);
-                        lib.AddBook(newBook);
-                        break;
-                    }
-                case 2:
-                    {
-                        lib.ViewAllBooks();
-                        break;
-                    }
-                case 3:
-                    {
-                        Console.Write("Enter Book ID to search: ");
-                        int searchId = int.Parse(Console.ReadLine());
-                        lib.SearchBookById(searchId);
-                        break;
-                    }
-                case 4:
-                    {
-                        Console.Write("Enter Book Title to search: ");
-                        string searchTitle = Console.ReadLine();
-                        lib.SearchBookByTitle(searchTitle);
-                        break;
-                    }
-                default:
-                    {
-                        Console.WriteLine("Wrong Option!!!\nChoose the right one");
-                        goto repeat;
-                    }
-            }
-
-            Console.WriteLine("Press 1 to Continue");
-            int opt = int.Parse(Console.ReadLine());
-            if (opt == 1)
-                goto repeat;
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.Message);
+                Console.WriteLine("\nPress y to continue...");
+                opt = char.Parse(Console.ReadLine());
+                Console.Clear();
+            } while (opt =='y');
         }
     }
+
 }
